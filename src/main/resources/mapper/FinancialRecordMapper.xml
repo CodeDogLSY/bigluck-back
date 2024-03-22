@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.dao.FinancialRecordMapper">
+    <select id="getAllFinancialRecords" resultType="org.example.model.FinancialRecord">
+        SELECT * FROM FinancialRecords
+    </select>
+
+    <insert id="addFinancialRecord" parameterType="org.example.model.FinancialRecord">
+        INSERT INTO FinancialRecords (transaction_date, transaction_type, amount, description)
+        VALUES (#{transactionDate}, #{transactionType}, #{amount}, #{description})
+    </insert>
+</mapper>
