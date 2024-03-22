@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.dao.ResidentActivityMapper">
+    <select id="getAllResidentActivities" resultType="org.example.model.ResidentActivity">
+        SELECT * FROM ResidentActivities
+    </select>
+
+    <select id="getResidentActivitiesByResidentId" resultType="org.example.model.ResidentActivity">
+        SELECT * FROM ResidentActivities WHERE resident_id = #{residentId}
+    </select>
+
+    <select id="getResidentActivitiesByActivityId" resultType="org.example.model.ResidentActivity">
+        SELECT * FROM ResidentActivities WHERE activity_id = #{activityId}
+    </select>
+
+    <insert id="addResidentActivity" parameterType="org.example.model.ResidentActivity">
+        INSERT INTO ResidentActivities (resident_id, activity_id, feedback)
+        VALUES (#{residentId}, #{activityId}, #{feedback})
+    </insert>
+</mapper>
