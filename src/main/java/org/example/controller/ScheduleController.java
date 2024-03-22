@@ -18,6 +18,11 @@ public class ScheduleController {
         this.scheduleService = scheduleService;
     }
 
+    /**
+     * 排班列表
+     *
+     * @return
+     */
     @PostMapping
     public List<Schedule> getAllSchedules() {
         return scheduleService.getAllSchedules();

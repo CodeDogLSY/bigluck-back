@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.model.Activity;
 import org.example.service.ActivityService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,7 @@ public class ActivityController {
         this.activityService = activityService;
     }
 
-    @GetMapping
+    @PostMapping
     public List<Activity> getAllActivities() {
         return activityService.getAllActivities();
     }

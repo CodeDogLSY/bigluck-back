@@ -1,48 +1,37 @@
 package org.example.model;
 
 public class Schedule {
-    private String scheduleId;
-    private String employeeName;
-    private String shift;
-    private String date;
+    private String id;
+    private String employee_id;
+    private String schedule_date;
 
-
-    public Schedule(String scheduleId, String employeeName, String shift, String date) {
-        this.scheduleId = scheduleId;
-        this.employeeName = employeeName;
-        this.shift = shift;
-        this.date = date;
+    public Schedule(String id, String employee_id, String schedule_date) {
+        this.id = id;
+        this.employee_id = employee_id;
+        this.schedule_date = schedule_date;
     }
 
-    public String getScheduleId() {
-        return scheduleId;
+    public String getId() {
+        return id;
     }
 
-    public void setScheduleId(String scheduleId) {
-        this.scheduleId = scheduleId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
+    public String getEmployee_id() {
+        return employee_id;
     }
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+    public void setEmployee_id(String employee_id) {
+        this.employee_id = employee_id;
     }
 
-    public String getShift() {
-        return shift;
+    public String getSchedule_date() {
+        return schedule_date;
     }
 
-    public void setShift(String shift) {
-        this.shift = shift;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
+    public void setSchedule_date(String schedule_date) {
+        this.schedule_date = schedule_date;
     }
 }
