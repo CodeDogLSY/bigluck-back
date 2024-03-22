@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.dao.DietaryPreferencesMapper">
+    <select id="getDietaryPreferencesByResidentId" resultType="org.example.model.DietaryPreferences">
+        SELECT * FROM DietaryPreferences WHERE resident_id = #{residentId}
+    </select>
+
+    <insert id="addDietaryPreferences" parameterType="org.example.model.DietaryPreferences">
+        INSERT INTO DietaryPreferences (resident_id, dietary_preferences, dietary_restrictions)
+        VALUES (#{residentId}, #{dietaryPreferences}, #{dietaryRestrictions})
+    </insert>
+</mapper>

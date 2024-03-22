@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.dao.FoodInventoryMapper">
+    <select id="getAllFoodInventory" resultType="org.example.model.FoodInventory">
+        SELECT * FROM FoodInventory
+    </select>
+
+    <select id="getFoodInventoryByFoodItem" resultType="org.example.model.FoodInventory">
+        SELECT * FROM FoodInventory WHERE food_item = #{foodItem}
+    </select>
+
+    <insert id="addFoodInventory" parameterType="org.example.model.FoodInventory">
+        INSERT INTO FoodInventory (food_item, quantity)
+        VALUES (#{foodItem}, #{quantity})
+    </insert>
+
+    <update id="updateFoodInventoryQuantity" parameterType="org.example.model.FoodInventory">
+        UPDATE FoodInventory SET quantity = #{quantity}
+        WHERE food_item = #{foodItem}
+    </update>
+
+    <update id="reduceFoodInventoryQuantity" parameterType="org.example.model.FoodInventory">
+        UPDATE FoodInventory SET quantity = quantity - #{quantity}
+        WHERE food_item = #{foodItem}
+    </update>
+</mapper>
