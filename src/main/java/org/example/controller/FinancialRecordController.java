@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * 财务记录
+ */
 @RestController
 @RequestMapping("/financialRecords")
 public class FinancialRecordController {
