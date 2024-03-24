@@ -1,11 +1,9 @@
 package org.example.controller;
 
 import org.example.model.MedicalRecord;
+import org.example.model.ResidentActivity;
 import org.example.service.MedicalRecordService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,4 +23,14 @@ public class MedicalRecordController {
     public List<MedicalRecord> getAllMedicalRecords() {
         return medicalRecordService.getAllMedicalRecords();
     }
+
+    /**
+     *
+     * 获取单个居民的活动列表
+     */
+    @PostMapping("/resident/{residentId}")
+    public List<MedicalRecord> getMedicalRecordsByResident(@PathVariable int residentId) {
+        return medicalRecordService.getMedicalRecordsByResident(residentId);
+    }
+
 }

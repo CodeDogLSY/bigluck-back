@@ -5,12 +5,22 @@ public class ResidentActivity {
     private int residentId;
     private int activityId;
     private String feedback;
+    private String activityName;
+    private String activityDate;
 
     public ResidentActivity(int id, int residentId, int activityId, String feedback) {
         this.id = id;
         this.residentId = residentId;
         this.activityId = activityId;
         this.feedback = feedback;
+    }
+    public ResidentActivity(int id, int residentId, int activityId, String feedback,String activityName,String activityDate) {
+        this.id = id;
+        this.residentId = residentId;
+        this.activityId = activityId;
+        this.feedback = feedback;
+        this.activityName = activityName;
+        this.activityDate = activityDate;
     }
 
     public int getId() {
@@ -43,5 +53,21 @@ public class ResidentActivity {
 
     public void setFeedback(String feedback) {
         this.feedback = feedback;
+    }
+
+    public String getActivityName() {
+        return activityName;
+    }
+
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
+    }
+
+    public String getActivityDate() {
+        return activityDate;
+    }
+
+    public void setActivityDate(String activityDate) {
+        this.activityDate = activityDate;
     }
 }

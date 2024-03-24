@@ -4,15 +4,21 @@
 
 <mapper namespace="org.example.dao.ResidentActivityMapper">
     <select id="getAllResidentActivities" resultType="org.example.model.ResidentActivity">
-        SELECT * FROM ResidentActivities
+        SELECT *
+        FROM ResidentActivities
     </select>
-
+    <!--      SELECT * FROM ResidentActivities WHERE resident_id = #{residentId}-->
     <select id="getResidentActivitiesByResidentId" resultType="org.example.model.ResidentActivity">
-        SELECT * FROM ResidentActivities WHERE resident_id = #{residentId}
+        SELECT ra.id,ra.resident_id,ra.activity_id,ra.feedback, a.activity_name,a.activity_date
+        FROM ResidentActivities ra
+                 INNER JOIN Activities a ON ra.activity_id = a.id
+        WHERE ra.resident_id = #{residentId}
     </select>
 
     <select id="getResidentActivitiesByActivityId" resultType="org.example.model.ResidentActivity">
-        SELECT * FROM ResidentActivities WHERE activity_id = #{activityId}
+        SELECT *
+        FROM ResidentActivities
+        WHERE activity_id = #{activityId}
     </select>
 
     <insert id="addResidentActivity" parameterType="org.example.model.ResidentActivity">

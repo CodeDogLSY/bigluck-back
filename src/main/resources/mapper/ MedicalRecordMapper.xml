@@ -4,6 +4,15 @@
 
 <mapper namespace="org.example.dao.MedicalRecordMapper">
     <select id="getAllMedicalRecords" resultType="org.example.model.MedicalRecord">
-        SELECT * FROM MedicalRecords
+        SELECT ma.resident_id,ma.health_condition,ma.medical_history,ma.medication, rs.name
+        FROM MedicalRecords ma
+                 INNER JOIN Residents rs ON ma.resident_id = rs.id
+    </select>
+
+    <select id="getMedicalRecordsByResident" resultType="org.example.model.MedicalRecord">
+        SELECT ma.resident_id,ma.health_condition,ma.medical_history,ma.medication, rs.name
+        FROM MedicalRecords ma
+                 INNER JOIN Residents rs ON ma.resident_id = rs.id
+        WHERE ma.resident_id = #{residentId}
     </select>
 </mapper>

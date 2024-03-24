@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface MedicalRecordMapper {
     List<MedicalRecord> getAllMedicalRecords();
+    List<MedicalRecord> getMedicalRecordsByResident(int residentId);
 }
