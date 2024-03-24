@@ -4,40 +4,40 @@ package org.example.model;
  * 医疗记录
  */
 public class MedicalRecord {
-    private String recordId;
-    private String patientName;
-    private String diagnosis;
+    private String resident_id;
+    private String health_condition;
+    private String medical_history;
     private String medication;
 
-    public MedicalRecord(String recordId, String patientName, String diagnosis, String medication) {
-        this.recordId = recordId;
-        this.patientName = patientName;
-        this.diagnosis = diagnosis;
+    public MedicalRecord(String resident_id, String health_condition, String medical_history, String medication) {
+        this.resident_id = resident_id;
+        this.health_condition = health_condition;
+        this.medical_history = medical_history;
         this.medication = medication;
     }
 
-    public String getRecordId() {
-        return recordId;
+    public String getResident_id() {
+        return resident_id;
     }
 
-    public void setRecordId(String recordId) {
-        this.recordId = recordId;
+    public void setResident_id(String resident_id) {
+        this.resident_id = resident_id;
     }
 
-    public String getPatientName() {
-        return patientName;
+    public String getHealth_condition() {
+        return health_condition;
     }
 
-    public void setPatientName(String patientName) {
-        this.patientName = patientName;
+    public void setHealth_condition(String health_condition) {
+        this.health_condition = health_condition;
     }
 
-    public String getDiagnosis() {
-        return diagnosis;
+    public String getMedical_history() {
+        return medical_history;
     }
 
-    public void setDiagnosis(String diagnosis) {
-        this.diagnosis = diagnosis;
+    public void setMedical_history(String medical_history) {
+        this.medical_history = medical_history;
     }
 
     public String getMedication() {
