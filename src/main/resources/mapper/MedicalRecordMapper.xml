@@ -10,7 +10,7 @@
     </select>
 
     <select id="getMedicalRecordsByResident" resultType="org.example.model.MedicalRecord">
-        SELECT ma.resident_id,ma.health_condition,ma.medical_history,ma.medication, rs.name
+        SELECT ma.id,ma.employee_id,ma.employee_id,ma.medication, rs.name
         FROM MedicalRecords ma
                  INNER JOIN Residents rs ON ma.resident_id = rs.id
         WHERE ma.resident_id = #{residentId}

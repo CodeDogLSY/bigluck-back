@@ -4,6 +4,8 @@
 
 <mapper namespace="org.example.dao.ScheduleMapper">
     <select id="getAllSchedules" resultType="org.example.model.Schedule">
-        SELECT * FROM Schedules
+        SELECT ad.id,ad.employee_id,em.name,ad.schedule_date
+        FROM Schedules ad
+                 INNER JOIN Employees em ON ad.employee_id = em.id
     </select>
 </mapper>
